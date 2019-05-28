@@ -1,0 +1,67 @@
+/node_modules
+/dist/hot
+/dist/storage
+/storage/*.key
+/vendor
+/.idea
+npm-debug.log
+yarn-error.log
+.env
+.vscode/
+dist/docs
+
+src/assets/js/config/config.json
+
+# dist
+dist/assets/css/*
+dist/assets/fonts/*
+dist/assets/icns/*
+dist/assets/icon/*
+dist/assets/js/*
+dist/assets/images/*
+dist/assets/locale/*
+dist/assets/mix-manifest.json
+dist/assets/temp
+dist/assets/svgs/*
+
+!public/assets/css/.gitkeep
+!public/assets/js/.gitkeep
+!public/assets/icns/.gitkeep
+
+dist/index.html
+
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+!public/assets/images/.gitkeep
+
+# Images
+resources/assets/images/raw/*
+
+# Documentation
+docs/*
+
+# NPM log files
+npm-debug.log*
+yarn-error.log
+
+# Storage
+storage/app/documents
+storage/app/import
+storage/app/export
+storage/app/jobs
+
+# Laravel Facade IDE Helper
+/_ide_helper.php
+
+# Imports
+/import
+!/import/pending/.gitkeep
+
+/storage/purify
+
+# Docker
+/docker/postgresql
+
+# Finder crap
+.DS_Store

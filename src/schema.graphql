@@ -1,0 +1,17 @@
+type Query {
+  places(searchString: String!, placeType: String): [Place]
+}
+
+type Place {
+  placeId: ID!
+  address: String!
+  placeName: String!
+  placeThumbnail: String!
+  placeTypes: [String]!
+  googleRating: String!
+  isOpen: Boolean!
+  currentOccupancy: Int!
+  currentLikes: Int!
+  currentDislikes: Int!
+  isFollowingPlace: Boolean!
+}

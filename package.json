@@ -1,0 +1,14 @@
+{
+  "name": "cityvibe-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Musango Wope",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "busy-hours": "^0.0.5",
+    "dotenv": "^8.0.0",
+    "graphql-yoga": "^1.17.4",
+    "prettier": "^1.17.1"
+  }
+}
