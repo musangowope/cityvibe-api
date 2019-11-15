@@ -34,42 +34,41 @@ const getPlacePhoto = async (photoRef = "") => {
   }
 };
 
-// const testOccupancy = async () => {
-//   const currDate = new Date();
-//   const currDayIndex = currDate.getDay();
-//   const currHour = currDate.getHours();
-//   try {
-//     const { week } = await busy_hours("ChIJa30FiARdzB0RXsP7a7q9oY0", apiKey);
-//     const { hours } = week[currDayIndex];
-//     const [{ percentage: occupancy }] = hours.filter(
-//         ({ hour }) => hour === currHour
-//     );
-//     console.log(occupancy);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
+const testOccupancy = async () => {
+  const currDate = new Date();
+  const currDayIndex = currDate.getDay();
+  const currHour = currDate.getHours();
+  try {
+    const { week } = await busy_hours("ChIJa30FiARdzB0RXsP7a7q9oY0", apiKey);
+    const { hours } = week[currDayIndex];
+    const [{ percentage: occupancy }] = hours.filter(
+        ({ hour }) => hour === currHour
+    );
+    console.log(occupancy);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-// const testPlace = () => {
-//   const searchString = "pubs in newlands, south africa";
-//   const placeType = "";
-//   const basePlaceTextUrl = process.env.BASE_PLACE_TEXT_SEARCH_URL;
-//   const url = `${basePlaceTextUrl}key=${apiKey}&query="${searchString}"
-//                 &placeType="${placeType}"`;
-//
-//   axios
-//     .get(url)
-//     .then(res => {
-//       const {
-//         photos: [{ photo_reference }]
-//       } = res.data.results[0];
-//       console.log(photo_reference);
-//       // console.log(res.data.results[0].photos[0].photo_reference);
-//     })
-//     .catch(e => console.log(e));
-// };
-//
-// testPlace();
+const testPlace = () => {
+  const searchString = "pubs in newlands, south africa";
+  const placeType = "";
+  const basePlaceTextUrl = process.env.BASE_PLACE_TEXT_SEARCH_URL;
+  const url = `${basePlaceTextUrl}key=${apiKey}&query="${searchString}"
+                &placeType="${placeType}"`;
+
+  axios
+    .get(url)
+    .then(res => {
+      const {
+        photos: [{ photo_reference }]
+      } = res.data.results[0];
+      console.log(photo_reference);
+      // console.log(res.data.results[0].photos[0].photo_reference);
+    })
+    .catch(e => console.log(e));
+};
+
 
 const resolvers = {
   Query: {
@@ -98,7 +97,7 @@ const resolvers = {
             placeTypes,
             googleRating,
             isOpen: isOpen,
-            currentOccupancy: getOccupancy(placeId),
+            // currentOccupancy: getOccupancy(placeId),
             currentLikes: 23,
             currentDislikes: 12,
             isFollowingPlace: false
@@ -110,7 +109,6 @@ const resolvers = {
     }
   }
 };
-//
 const server = new GraphQLServer({
   typeDefs: "./src/schema.graphql",
   resolvers
